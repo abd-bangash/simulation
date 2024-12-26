@@ -1,14 +1,16 @@
 const {
   generateInterarrivalTimes,
-} = require("./utils/generateInterArrivalTimes");
-const { generatePriorities } = require("./utils/generatePriorities");
+} = require("./services/generateInterArrivalTimes");
+const { generatePriorities } = require("./services/generatePriorities");
 const {
   generateExponentialServiceTimes,
   generateUniformServiceTimes,
   generateNormalServiceTimes,
-} = require("./utils/generateServiceTimes");
+} = require("./services/generateServiceTimes");
 
-const { runPreamptiveSimulation } = require("./utils/runPreamptiveSimulation");
+const {
+  runPreamptiveSimulation,
+} = require("./services/runPreamptiveSimulation");
 
 function simulationMMExponnetial(
   customersCount,
