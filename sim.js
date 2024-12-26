@@ -9,6 +9,7 @@ const {
 } = require("./utils/generateServiceTimes");
 
 const { runPreamptiveSimulation } = require("./utils/runPreamptiveSimulation");
+
 function simulationMMExponnetial(
   customersCount,
   serversCount,
@@ -26,6 +27,7 @@ function simulationMMExponnetial(
 
   runPreamptiveSimulation(arrivals, serviceTimes, priorities, serversCount);
 }
+
 function simulationMGNormal(
   customersCount,
   serversCount,
@@ -44,6 +46,7 @@ function simulationMGNormal(
 
   runPreamptiveSimulation(arrivals, serviceTimes, priorities, serversCount);
 }
+
 function simulationMGUniform(
   customersCount,
   serversCount,
@@ -62,6 +65,9 @@ function simulationMGUniform(
 
   runPreamptiveSimulation(arrivals, serviceTimes, priorities, serversCount);
 }
-simulationMMExponnetial(10, 2, 1.5, 6, 3);
-simulationMGNormal(10, 2, 1.5, 6, 0.5, 3);
-simulationMGUniform(10, 2, 1.5, 6, 0.5, 3);
+
+module.exports = {
+  simulationMMExponnetial,
+  simulationMGNormal,
+  simulationMGUniform,
+};
