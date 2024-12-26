@@ -62,7 +62,7 @@ function simulationMGUniform(
     acc.push((idx === 0 ? 0 : acc[idx - 1]) + curr);
     return acc;
   }, []);
-  const serviceTimes = generateNormalServiceTimes(customersCount, a, b);
+  const serviceTimes = generateUniformServiceTimes(customersCount, a, b);
   const priorities = generatePriorities(customersCount, 1, lowestPriority);
 
   runPreamptiveSimulation(arrivals, serviceTimes, priorities, serversCount);
